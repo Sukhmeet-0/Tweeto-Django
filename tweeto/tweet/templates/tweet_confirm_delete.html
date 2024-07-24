@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Django and tweet{% endblock %}
+{% block content %}
+    <h1 class='mt-4 text-center'>Are you sure, you want to delete?</h1>
+    <form method="post" class='form'>
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+        <a href="{% url 'tweet_list' %}" class="btn btn-success">Cancel</a>
+    </form>
+{% endblock %}
